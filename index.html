@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CapCut Pro APK Download</title>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,6 +46,7 @@
       margin: 10px 0;
       padding: 12px;
       text-align: left;
+      transition: all 0.5s ease;
     }
 
     .info-title {
@@ -65,7 +70,12 @@
     }
 
     .download-btn.active {
-      background: linear-gradient(to right, #00c851, #007e33); /* Hijau ketika diklik */
+      background: linear-gradient(to right, #00c851, #007e33);
+    }
+
+    #timer {
+      margin-top: 12px;
+      font-weight: bold;
     }
 
     .adblock-warning {
@@ -87,39 +97,41 @@
 
   <div class="container">
     <!-- Gambar CapCut Pro -->
-    <img src="https://i.postimg.cc/0jdMYNfC/capcut-pro-logo.png" alt="CapCut Pro Logo" class="apk-image" />
+    <img src="https://i.ibb.co/yB8h3Kf/capcut-pro-logo.png" alt="CapCut Pro Logo" class="apk-image" />
 
     <h1>CapCut Pro APK Download<br>Latest Version</h1>
 
-    <div class="info-box"><span class="info-title">📱 App Name</span>CapCut Pro</div>
-    <div class="info-box"><span class="info-title">📝 Mod Type</span>Premium Unlocked (No Watermark)</div>
-    <div class="info-box"><span class="info-title">📦 Size</span>200Mb</div>
-    <div class="info-box"><span class="info-title">⬇ Downloads</span>500 Millions</div>
-    <div class="info-box"><span class="info-title">🕓 Updated</span>1 Day Ago</div>
-    <div class="info-box"><span class="info-title">🔁 Latest Version</span>v15.01.44</div>
+    <div class="info-box" data-aos="fade-up"><span class="info-title">📱 App Name</span>CapCut Pro</div>
+    <div class="info-box" data-aos="fade-up"><span class="info-title">📝 Mod Type</span>Premium Unlocked (No Watermark)</div>
+    <div class="info-box" data-aos="fade-up"><span class="info-title">📦 Size</span>200Mb</div>
+    <div class="info-box" data-aos="fade-up"><span class="info-title">⬇ Downloads</span>500 Millions</div>
+    <div class="info-box" data-aos="fade-up"><span class="info-title">🕓 Updated</span>1 Day Ago</div>
+    <div class="info-box" data-aos="fade-up"><span class="info-title">🔁 Latest Version</span>v15.01.44</div>
 
-    <p id="timer">Tunggu 15 detik...</p>
     <button id="downloadBtn" class="download-btn" disabled>Download Fast</button>
+    <p id="timer">Tunggu 10 detik...</p>
 
     <div id="adblock-warning" class="adblock-warning">Harap nonaktifkan AdBlock untuk melanjutkan!</div>
   </div>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
 
   <script>
     const downloadBtn = document.getElementById("downloadBtn");
     const timerText = document.getElementById("timer");
     const adWarning = document.getElementById("adblock-warning");
 
-    // Ganti sesuai kebutuhan
-    const adLink = "https://your-directlink-adsterra.com"; // Directlink Adsterra kamu
-    const fileLink = "https://tujuan-download.com/file.apk"; // Link file asli
+    const adLink = "https://your-directlink-adsterra.com"; // Ganti dengan directlink kamu
+    const fileLink = "https://tujuan-download.com/file.apk"; // Ganti dengan link asli
 
     let adBlocked = false;
-    let count = 15;
+    let count = 10;
     let interval;
 
     window.addEventListener("load", () => {
       setTimeout(() => {
-        // Deteksi Adblock dengan cara mendeteksi iklan yang tidak muncul
         const bait = document.createElement('div');
         bait.className = 'adsbox';
         bait.style.height = '1px';
