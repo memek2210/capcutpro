@@ -75,12 +75,6 @@
       margin-top: 15px;
     }
 
-    .ad-banner {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-    }
-
     @media screen and (max-width: 500px) {
       .container {
         margin: 10px;
@@ -93,7 +87,7 @@
 
   <div class="container">
     <!-- Gambar CapCut Pro -->
-    <img src="https://cdn.openai.com/chatgpt/capcut-pro.png" alt="CapCut Pro Logo" class="apk-image" />
+    <img src="https://i.postimg.cc/0jdMYNfC/capcut-pro-logo.png" alt="CapCut Pro Logo" class="apk-image" />
 
     <h1>CapCut Pro APK Download<br>Latest Version</h1>
 
@@ -108,30 +102,16 @@
     <button id="downloadBtn" class="download-btn" disabled>Download Fast</button>
 
     <div id="adblock-warning" class="adblock-warning">Harap nonaktifkan AdBlock untuk melanjutkan!</div>
-
-    <!-- Banner Iklan -->
-    <div class="ad-banner" id="ad-container">
-      <script type="text/javascript">
-        atOptions = {
-          'key' : '815752968be50e066ff682026321e704',
-          'format' : 'iframe',
-          'height' : 250,
-          'width' : 300,
-          'params' : {}
-        };
-      </script>
-      <script type="text/javascript" src="//www.highperformanceformat.com/815752968be50e066ff682026321e704/invoke.js"></script>
-    </div>
   </div>
 
   <script>
     const downloadBtn = document.getElementById("downloadBtn");
     const timerText = document.getElementById("timer");
     const adWarning = document.getElementById("adblock-warning");
-    const adContainer = document.getElementById("ad-container");
 
-    const adLink = "https://your-directlink-adsterra.com"; // Ganti dengan directlink kamu
-    const fileLink = "https://tujuan-download.com/file.apk"; // Ganti dengan link file kamu
+    // Ganti sesuai kebutuhan
+    const adLink = "https://your-directlink-adsterra.com"; // Directlink Adsterra kamu
+    const fileLink = "https://tujuan-download.com/file.apk"; // Link file asli
 
     let adBlocked = false;
     let count = 15;
@@ -139,12 +119,16 @@
 
     window.addEventListener("load", () => {
       setTimeout(() => {
-        const adVisible = adContainer.offsetHeight > 0 && adContainer.innerHTML.trim().length > 0;
-
-        if (!adVisible) {
+        // Deteksi Adblock dengan cara mendeteksi iklan yang tidak muncul
+        const bait = document.createElement('div');
+        bait.className = 'adsbox';
+        bait.style.height = '1px';
+        document.body.appendChild(bait);
+        if (bait.offsetHeight === 0) {
           adBlocked = true;
           adWarning.style.display = "block";
         }
+        bait.remove();
 
         if (!adBlocked) {
           interval = setInterval(() => {
