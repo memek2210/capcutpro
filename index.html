@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CapCut Pro APK Download</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 30px auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .apk-image {
+      max-width: 200px;
+      margin: 0 auto 15px;
+      display: block;
+      border-radius: 20px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 10px 0;
+      color: #2b2b2b;
+    }
+
+    .info-box {
+      border: 1.5px solid #ccc;
+      border-radius: 10px;
+      margin: 10px 0;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .info-title {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .download-btn {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+      cursor: not-allowed;
+      width: 100%;
+      transition: background 0.3s ease;
+      opacity: 0.6;
+    }
+
+    .download-btn.active {
+      background: linear-gradient(to right, #00c851, #007e33); /* Hijau ketika diklik */
+    }
+
+    .adblock-warning {
+      display: none;
+      color: red;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .ad-banner {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 500px) {
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Gambar CapCut Pro -->
+    <img src="https://cdn.openai.com/chatgpt/capcut-pro.png" alt="CapCut Pro Logo" class="apk-image" />
+
+    <h1>CapCut Pro APK Download<br>Latest Version</h1>
+
+    <div class="info-box"><span class="info-title">📱 App Name</span>CapCut Pro</div>
+    <div class="info-box"><span class="info-title">📝 Mod Type</span>Premium Unlocked (No Watermark)</div>
+    <div class="info-box"><span class="info-title">📦 Size</span>200Mb</div>
+    <div class="info-box"><span class="info-title">⬇ Downloads</span>500 Millions</div>
+    <div class="info-box"><span class="info-title">🕓 Updated</span>1 Day Ago</div>
+    <div class="info-box"><span class="info-title">🔁 Latest Version</span>v15.01.44</div>
+
+    <p id="timer">Tunggu 15 detik...</p>
+    <button id="downloadBtn" class="download-btn" disabled>Download Fast</button>
+
+    <div id="adblock-warning" class="adblock-warning">Harap nonaktifkan AdBlock untuk melanjutkan!</div>
+
+    <!-- Banner Iklan -->
+    <div class="ad-banner" id="ad-container">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '815752968be50e066ff682026321e704',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/815752968be50e066ff682026321e704/invoke.js"></script>
+    </div>
+  </div>
+
+  <script>
+    const downloadBtn = document.getElementById("downloadBtn");
+    const timerText = document.getElementById("timer");
+    const adWarning = document.getElementById("adblock-warning");
+    const adContainer = document.getElementById("ad-container");
+
+    const adLink = "https://your-directlink-adsterra.com"; // Ganti dengan directlink kamu
+    const fileLink = "https://tujuan-download.com/file.apk"; // Ganti dengan link file kamu
+
+    let adBlocked = false;
+    let count = 15;
+    let interval;
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const adVisible = adContainer.offsetHeight > 0 && adContainer.innerHTML.trim().length > 0;
+
+        if (!adVisible) {
+          adBlocked = true;
+          adWarning.style.display = "block";
+        }
+
+        if (!adBlocked) {
+          interval = setInterval(() => {
+            count--;
+            timerText.textContent = `Tunggu ${count} detik...`;
+            if (count <= 0) {
+              clearInterval(interval);
+              downloadBtn.disabled = false;
+              downloadBtn.style.opacity = "1";
+              downloadBtn.style.cursor = "pointer";
+              timerText.textContent = "Siap untuk diunduh!";
+            }
+          }, 1000);
+        }
+      }, 2000);
+    });
+
+    downloadBtn.addEventListener("click", () => {
+      if (!adBlocked) {
+        downloadBtn.classList.add("active");
+        window.open(adLink, "_blank");
+        setTimeout(() => {
+          window.location.href = fileLink;
+        }, 1500);
+      }
+    });
+  </script>
+
+</body>
+</html>
